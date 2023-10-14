@@ -1,24 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Image, TextInput, Button,FlatList,TouchableOpacity} from 'react-native';
 import { useState } from 'react';
+import Logo from './Logo';
 
 
 
 export default function EventsScreen() {
-const [events, addEvents]= useState([{Key:1,place:'malmö'},{key:2,place:'lund'}]);
+const [events, addEvents]= useState([
+    {Key:1,place:'malmö',Time:'15:00'},
+    {key:2,place:'lund',Time:'16:00'},
+    {key:3,place:'Helsingborg',Time:'17:00'},
+    {key:4,place:'Landskrona',Time:'18:00'},
+    {key:5,place:'Kävlinge',Time:'19:00'},
+   ]);
 
 
 
 
   return (
     <View style={styles.EventsScreenContainer}>
-        <Image source={require('./logo.png')} /> 
+       <Logo />
         <FlatList
          data={events}
          renderItem={({item}) => (
             <TouchableOpacity>
-              <Text>{item.place}</Text>
+              <Text style={styles.placecontainer}>{item.place}</Text>
+              <Text>{item.Time}</Text>
             </TouchableOpacity>
+
        
 
 
@@ -45,5 +54,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding:100,
   },
+  placecontainer:{
+  backgroundColor:'red',
+  }
 });

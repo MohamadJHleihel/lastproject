@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Image, TextInput, Button} from 'react-native';
 import { useState } from 'react';
+import Logo from './Logo';
 
 
 
@@ -11,7 +12,7 @@ export default function Login() {
     <View style={styles.loginContainer}>
    
       <Text>Open up App.js to start working on your app!</Text>
-      <Image source={require('./logo.png')} /> 
+      <Logo />
       <View>
        <Text>Login</Text>
       </View>
@@ -28,7 +29,7 @@ export default function Login() {
           placeholder='Password'/>
           <Button title='Login' onPress={() =>{
 
-            
+
           }}/>
       </View>
 
