@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 
-export default function DetailsScreen() {
+export default function DetailsScreen({navigation}) {
 
   return (
     <View style={styles.DetailsScreenContainer}>
@@ -14,6 +14,7 @@ export default function DetailsScreen() {
         <Button 
         title='Book'
         onPress={() => {
+            navigation.navigate("Success");
         }}/>
       </View>
       <View>

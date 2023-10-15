@@ -15,6 +15,7 @@ const [events, addEvents]= useState([
     {key:4,place:'Landskrona',Time:'18:00'},
     {key:5,place:'Kävlinge',Time:'19:00'},
    ]);
+   ///////const [placeholder,onPlaceholder] = useState('');
 
 
 
@@ -22,11 +23,14 @@ const [events, addEvents]= useState([
   return (
     <View style={styles.EventsScreenContainer}>
        <Logo />
-      {/*  <Text>{showEmail}</Text> */}
+       //////////<Text>{ placeholder }</Text>
         <FlatList
          data={events}
          renderItem={({item}) => (
-            <TouchableOpacity>
+            <TouchableOpacity
+             onPress={() =>{
+                navigation.navigate("DetailsScreen");
+             }}>
               <Text style={styles.placecontainer}>{item.place}</Text>
               <Text>{item.Time}</Text>
             </TouchableOpacity>
