@@ -2,10 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Image, TextInput, Button,FlatList,TouchableOpacity} from 'react-native';
 import { useState } from 'react';
 import Logo from './Logo';
+import Login from './Login';
 
 
 
-export default function EventsScreen() {
+
+export default function EventsScreen({navigation, prop,route}) {
 const [events, addEvents]= useState([
     {Key:1,place:'malmö',Time:'15:00'},
     {key:2,place:'lund',Time:'16:00'},
@@ -20,6 +22,7 @@ const [events, addEvents]= useState([
   return (
     <View style={styles.EventsScreenContainer}>
        <Logo />
+      {/*  <Text>{showEmail}</Text> */}
         <FlatList
          data={events}
          renderItem={({item}) => (

@@ -5,9 +5,10 @@ import Logo from './Logo';
 
 
 
-export default function Login() {
+export default function Login({navigation}) {
   const [email, onAddingemail] = useState('');
   const [password, onTypingPassword] = useState('');
+  const [showEmail,onaddmail] = useState('kkkk');
   return (
     <View style={styles.loginContainer}>
    
@@ -28,9 +29,11 @@ export default function Login() {
           value={password}
           placeholder='Password'/>
           <Button title='Login' onPress={() =>{
-
+           /*  const showEmail = email; */
+           navigation.navigate("EventsScreen");
 
           }}/>
+        
       </View>
 
       
