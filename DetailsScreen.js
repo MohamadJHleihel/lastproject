@@ -4,12 +4,12 @@ import { useState } from 'react';
 
 
 
-export default function DetailsScreen({navigation}) {
+export default function DetailsScreen({navigation,route}) {
 
   return (
     <View style={styles.DetailsScreenContainer}>
-        <Text>Picture from API</Text>
-   
+        <Text>{route.params.item.place}</Text>
+        <Image source= {require (route.params.item.photo)} />
       <View>
         <Button 
         title='Book'

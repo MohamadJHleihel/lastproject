@@ -9,13 +9,13 @@ import Login from './Login';
 
 export default function EventsScreen({navigation, prop,route}) {
 const [events, addEvents]= useState([
-    {Key:1,place:'malmö',Time:'15:00'},
-    {key:2,place:'lund',Time:'16:00'},
-    {key:3,place:'Helsingborg',Time:'17:00'},
-    {key:4,place:'Landskrona',Time:'18:00'},
-    {key:5,place:'Kävlinge',Time:'19:00'},
+    {Key:1,place:'malmö',Time:'15:00',photo:'./Malmö.png'},
+    {key:2,place:'lund',Time:'16:00',photo:'./Malmö.png'},
+    {key:3,place:'Helsingborg',Time:'17:00',photo:'./Malmö.png'},
+    {key:4,place:'Landskrona',Time:'18:00',photo:'./Malmö.png'},
+    {key:5,place:'Kävlinge',Time:'19:00',photo:'./Malmö.png'},
    ]);
-   ///////const [placeholder,onPlaceholder] = useState('');
+
 
 
 
@@ -23,16 +23,19 @@ const [events, addEvents]= useState([
   return (
     <View style={styles.EventsScreenContainer}>
        <Logo />
-       //////////<Text>{ placeholder }</Text>
+       <Text>Welcome Mr: { route.params.paramEmail }</Text>
         <FlatList
          data={events}
          renderItem={({item}) => (
             <TouchableOpacity
-             onPress={() =>{
-                navigation.navigate("DetailsScreen");
-             }}>
+             onPress={() =>
+                navigation.navigate("DetailsScreen",
+                {item:item})
+        
+             }>
               <Text style={styles.placecontainer}>{item.place}</Text>
               <Text>{item.Time}</Text>
+            
             </TouchableOpacity>
 
        

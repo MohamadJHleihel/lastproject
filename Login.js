@@ -6,7 +6,7 @@ import Logo from './Logo';
 
 
 export default function Login({route ,navigation}) {
-  const [email, onAddingemail] = useState('');
+   const [email, onAddingemail] = useState('');
   const [password, onTypingPassword] = useState('');
   
   return (
@@ -21,18 +21,23 @@ export default function Login({route ,navigation}) {
         <Text> Email</Text>
         <TextInput 
           onChangeText={onAddingemail}
-          value={email}
+          value={(username) => onAddingemail(username) }
           placeholder='Email,Phone number...'/>
           <Text>Password</Text>
           <TextInput 
           onChangeText={onTypingPassword}
           value={password}
           placeholder='Password'/>
-          <Button title='Login' onPress={() =>{
-           /*  const showEmail = email////////; */
-           navigation.push("EventsScreen", email);
+          <Button 
+           title='Login' 
+           onPress={() =>
+           navigation.navigate(
+            "EventsScreen", 
+            {paramEmail : email
+            
+        
 
-          }}/>
+          })}/>
         
       </View>
 
