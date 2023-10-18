@@ -8,7 +8,15 @@ import Logo from './Logo';
 export default function Login({route ,navigation}) {
    const [email, onAddingemail] = useState('');
   const [password, onTypingPassword] = useState('');
-  
+/*   function passwordCheck(password) {
+    if (password == 123){
+      navigation.navigate (
+        "EventsScreen", 
+        {paramEmail : email
+    });} else (return 'error'
+
+  }
+   */
   return (
     <View style={styles.loginContainer}>
    
