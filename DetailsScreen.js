@@ -5,16 +5,21 @@ import { useState } from 'react';
 
 
 export default function DetailsScreen({navigation,route}) {
-
+const parambooking = route.params.item;
   return (
     <View style={styles.DetailsScreenContainer}>
         <Text>{route.params.item.place}</Text>
-        <Image source= {require (route.params.item.photo)} />
+        <Image 
+        source={route.params.item.photo}
+        style ={{height:200, width:200}}
+        /> 
+        
       <View>
         <Button 
         title='Book'
         onPress={() => {
-            navigation.navigate("Success");
+            navigation.navigate("Success",
+            {parambooking:parambooking})
         }}/>
       </View>
       <View>

@@ -9,14 +9,16 @@ import Login from './Login';
 
 export default function EventsScreen({navigation, prop,route}) {
 const [events, addEvents]= useState([
-    {Key:1,place:'malmö',Time:'15:00',photo:'./Malmö.png'},
-    {key:2,place:'lund',Time:'16:00',photo:'./Malmö.png'},
-    {key:3,place:'Helsingborg',Time:'17:00',photo:'./Malmö.png'},
-    {key:4,place:'Landskrona',Time:'18:00',photo:'./Malmö.png'},
-    {key:5,place:'Kävlinge',Time:'19:00',photo:'./Malmö.png'},
+    {Key:1,place:'malmö',Time:'15:00',photo:require('./Malmö.png')},
+    {key:2,place:'lund',Time:'16:00',photo:require('./Malmö.png')},
+    {key:3,place:'Helsingborg',Time:'17:00',photo:require('./Malmö.png')},
+    {key:4,place:'Landskrona',Time:'18:00',photo:require('./Malmö.png')},
+    {key:5,place:'Kävlinge',Time:'19:00',photo:require('./Malmö.png')},
    ]);
 
-
+itemSeparator = () =>{
+    return<View style={{color:'green', height:57}}/>
+}
 
 
 
@@ -26,6 +28,8 @@ const [events, addEvents]= useState([
        <Text>Welcome Mr: { route.params.paramEmail }</Text>
         <FlatList
          data={events}
+         ItemSeparatorComponent={itemSeparator}
+     /*     ListEmptyComponent={} */
          renderItem={({item}) => (
             <TouchableOpacity
              onPress={() =>
