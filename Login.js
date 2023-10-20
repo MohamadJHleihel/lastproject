@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image, TextInput, Button} from 'react-native';
+import { StyleSheet, Text, View,Image, TextInput, Button, Alert} from 'react-native';
 import { useState } from 'react';
 import Logo from './Logo';
 
@@ -15,7 +15,10 @@ export default function Login({route ,navigation}) {
       if(password=='123' && name=='Mohamad'){
       navigation.navigate (
         "EventsScreen", 
-        {paramEmail : name})}};
+        {paramEmail : name})}
+      else{Alert.alert('Wrong username or password')
+  }};
+        
        
   
   return (

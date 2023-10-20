@@ -8,21 +8,22 @@ export default function DetailsScreen({navigation,route}) {
 
 function placeAlert() {
     
- Alert.alert('Alert Title', 'My Alert Msg', 
+ Alert.alert('Place', route.params.item.place, 
   [{text: 'Cancel',
    onPress: () => console.log('Cancel Pressed'),
     style: 'cancel'},
-    {text: 'OK', onPress: () => console.log('OK Pressed')},
+    {text: 'Book', onPress: () => {navigation.navigate("Success",
+    {parambooking:parambooking})}},
     ]);}
 
 
 function timeAlert() {
 
-    Alert.alert('Alert Title', 'My Alert Msg', 
+    Alert.alert('Alert Title', route.params.item.Time, 
         [{text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
-        style: 'cancel'},
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
+        onPress: () => console.log('Cancel Pressed')},
+        {text: 'Book', onPress: () => {navigation.navigate("Success",
+        {parambooking:parambooking})}},
         ]);}
          
   
@@ -32,13 +33,15 @@ function timeAlert() {
 const parambooking = route.params.item;
   return (
     <View style={styles.DetailsScreenContainer}>
-        <Text>{route.params.item.place}</Text>
+        <Text style={styles.DetailsHeader}>Join us at :{route.params.item.Time}</Text>
         <Image 
         source={route.params.item.photo}
-        style ={{height:200, width:200}}
+        style ={{flex:2, width:200}}
         /> 
         
-      <View>
+      
+      <View style={styles.booking}>
+        <Text> the details from API</Text>
         <Button 
         title='Book'
         onPress={() => {
@@ -46,28 +49,27 @@ const parambooking = route.params.item;
             {parambooking:parambooking})
         }}/>
       </View>
-      <View>
-        <Text> the details from API</Text>
-      </View>
      <View style={styles.ButtonsDetailsScreenContainer}>
       <View>
         <TouchableOpacity
         onPress={() =>{
-            timeAlert();
-        }}>
+         timeAlert();
+        }}
+        style={styles.timeAndPlace}>
         
-        <Text>Time    </Text>
+        <Text style={{fontSize:50}}>Time</Text>
       
         </TouchableOpacity>
       </View>
 
       <View>
         <TouchableOpacity
-        onPress={() => {
+         onPress={() => {
           placeAlert();
-        }}>
+         }}
+         style={styles.timeAndPlace}>
         
-        <Text>       Place</Text>
+        <Text style={{fontSize:50}}>Place</Text>
       
         </TouchableOpacity>
       </View>
@@ -82,21 +84,37 @@ const parambooking = route.params.item;
 const styles = StyleSheet.create({
   DetailsScreenContainer: {
     flex: 3,
-    backgroundColor: '#ccccff',
+    backgroundColor: '#E4DDDE',
     alignItems: 'center',
     justifyContent: 'center'
-    //marginTop:50,
+    
+  },
+  DetailsHeader:{
+    flex:0.5
+  },
+  booking:{
+    flexDirection:'row',
+    flex:2,
+    backgroundColor:'red',
+    justifyContent: 'space-between',
+    justifyContent:'space-around',
+    alignItems: 'center',
+    width:'100%'
   },
 
   ButtonsDetailsScreenContainer: {
-    flex: 2,
+    flex: 1,
     backgroundColor: '#cccccc',
+    width:'100%',
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection:'row',
-    padding:90
-    
-
-    
+    justifyContent: 'space-between',
+    justifyContent:'space-around',
+    flexDirection:'row'
+  },
+  timeAndPlace:{
+    backgroundColor:'#8B6C70',
+    margin:10,
+    borderWidth:0.25,
+    borderRadius:5
   },
 });
