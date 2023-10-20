@@ -10,10 +10,23 @@ import { NavigationContainer } from '@react-navigation/native';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  //const style =
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen 
+         name="Login" 
+         component={Login} 
+         options={{
+          title: 'Login',
+          headerStyle: {
+            backgroundColor: '#F8C8BA',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}  />
         <Stack.Screen name="EventsScreen" component={EventsScreen} />
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
         <Stack.Screen name="Success" component={Success} />

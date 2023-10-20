@@ -6,46 +6,52 @@ import Logo from './Logo';
 
 
 export default function Login({route ,navigation}) {
-   const [email, onAddingemail] = useState('');
+  const [name, onAddingName] = useState('');
+  const [email, onAddingemail] = useState('');
   const [password, onTypingPassword] = useState('');
-/*   function passwordCheck(password) {
-    if (password == 123){
+  
+  function passwordCheck(password,name) {
+     
+      if(password=='123' && name=='Mohamad'){
       navigation.navigate (
         "EventsScreen", 
-        {paramEmail : email
-    });} else (return 'error'
-
-  }
-   */
+        {paramEmail : name})}};
+       
+  
   return (
     <View style={styles.loginContainer}>
    
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>We find the place and you do the dance</Text>
       <Logo />
       <View>
-       <Text>Login</Text>
+       <Text style={styles.login}>Login Information</Text>
       </View>
       <View>
+      {<Text> Name</Text>}
+        <TextInput 
+        style={styles.inputContainer}
+          onChangeText={onAddingName}
+          value={name}
+          placeholder='User Name'/>
         <Text> Email</Text>
         <TextInput 
+          style={styles.inputContainer}
           onChangeText={onAddingemail}
-          value={(username) => onAddingemail(username) }
+          value={ email }
           placeholder='Email,Phone number...'/>
           <Text>Password</Text>
           <TextInput 
+          style={styles.inputContainer}
           onChangeText={onTypingPassword}
           value={password}
           placeholder='Password'/>
           <Button 
            title='Login' 
-           onPress={() =>
-           navigation.navigate(
-            "EventsScreen", 
-            {paramEmail : email
-            
-        
+           onPress={() =>{passwordCheck(password,name);} 
 
-          })}/>
+           
+
+          }/>
         
       </View>
 
@@ -58,8 +64,18 @@ export default function Login({route ,navigation}) {
 const styles = StyleSheet.create({
   loginContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E4DDDE',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
+  },
+  inputContainer:{
+    borderWidth:0.25,
+    borderRadius:5
+  },
+  login:{
+   fontSize:20,
+   fontStyle:'italic',
+   color:'#8B6C70',
+   fontWeight:'bold'
   },
 });

@@ -5,6 +5,30 @@ import { useState } from 'react';
 
 
 export default function DetailsScreen({navigation,route}) {
+
+function placeAlert() {
+    
+ Alert.alert('Alert Title', 'My Alert Msg', 
+  [{text: 'Cancel',
+   onPress: () => console.log('Cancel Pressed'),
+    style: 'cancel'},
+    {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ]);}
+
+
+function timeAlert() {
+
+    Alert.alert('Alert Title', 'My Alert Msg', 
+        [{text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel'},
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ]);}
+         
+  
+
+
+
 const parambooking = route.params.item;
   return (
     <View style={styles.DetailsScreenContainer}>
@@ -28,18 +52,22 @@ const parambooking = route.params.item;
      <View style={styles.ButtonsDetailsScreenContainer}>
       <View>
         <TouchableOpacity
-        onPress={() =>{}}>
+        onPress={() =>{
+            timeAlert();
+        }}>
         
-        <Text>Time</Text>
+        <Text>Time    </Text>
       
         </TouchableOpacity>
       </View>
 
       <View>
         <TouchableOpacity
-        onPress={() =>{}}>
+        onPress={() => {
+          placeAlert();
+        }}>
         
-        <Text>Place</Text>
+        <Text>       Place</Text>
       
         </TouchableOpacity>
       </View>
@@ -56,8 +84,8 @@ const styles = StyleSheet.create({
     flex: 3,
     backgroundColor: '#ccccff',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginTop:50,
+    justifyContent: 'center'
+    //marginTop:50,
   },
 
   ButtonsDetailsScreenContainer: {
@@ -66,6 +94,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection:'row',
-    padding:90,
+    padding:90
+    
+
+    
   },
 });

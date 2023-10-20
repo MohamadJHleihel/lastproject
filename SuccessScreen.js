@@ -9,7 +9,7 @@ export default function Success({route}) {
         <View>
             <Image  source={require('./Hurray.png')}/>
             <View>
-           {/*  <Text>{route.params.parambooking.place}</Text> */}
+            <Text>{route.params.parambooking.place}</Text>
             </View>
             <FlatList
             data={route.params.parambooking}

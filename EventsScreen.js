@@ -7,7 +7,7 @@ import Login from './Login';
 
 
 
-export default function EventsScreen({navigation, prop,route}) {
+export default function EventsScreen({navigation,route}) {
 const [events, addEvents]= useState([
     {Key:1,place:'malmö',Time:'15:00',photo:require('./Malmö.png')},
     {key:2,place:'lund',Time:'16:00',photo:require('./Malmö.png')},
@@ -26,6 +26,7 @@ itemSeparator = () =>{
     <View style={styles.EventsScreenContainer}>
        <Logo />
        <Text>Welcome Mr: { route.params.paramEmail }</Text>
+       <View style={styles.flatListStyle}>
         <FlatList
          data={events}
          ItemSeparatorComponent={itemSeparator}
@@ -49,6 +50,7 @@ itemSeparator = () =>{
          )}
         
         />
+        </View>
 
    
       <Text>Open up App.js to start working on your app!</Text>
@@ -65,12 +67,18 @@ itemSeparator = () =>{
 const styles = StyleSheet.create({
   EventsScreenContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E4DDDE',
     alignItems: 'center',
     justifyContent: 'center',
     padding:100,
   },
+
   placecontainer:{
-  backgroundColor:'red',
+  backgroundColor:'#E4DDDE',
+  },
+
+  flatListStyle:{ 
+   width:'100%',
+   backgroundColor:'#ccffcc'
   }
 });
