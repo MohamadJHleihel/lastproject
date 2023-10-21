@@ -6,6 +6,7 @@ import EventsScreen from './EventsScreen';
 import Success from './SuccessScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import FoodScreen from './FoodScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,7 @@ export default function App() {
         <Stack.Screen name="EventsScreen" component={EventsScreen} />
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
         <Stack.Screen name="Success" component={Success} />
+        <Stack.Screen name="FoodScreen" component={FoodScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
