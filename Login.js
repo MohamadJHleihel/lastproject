@@ -18,7 +18,7 @@ export default function Login({ route, navigation }) {
         { paramEmail: name })
     }
     else {
-      Alert.alert('Wrong username or password')
+      Alert.alert('Invalid username or password')
     }
   };
 
