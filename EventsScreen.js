@@ -9,11 +9,11 @@ import Login from './Login';
 
 export default function EventsScreen({navigation,route}) {
 const [events, addEvents]= useState([
-    {Key:1,bandName:'Metallica',place:'malmö',Time:'15:00',photo:require('./Malmö.png')},
-    {key:2,bandName:'Red Hot Chili Peppers',place:'lund',Time:'16:00',photo:require('./Malmö.png')},
-    {key:3,bandName:'Green Day',place:'Helsingborg',Time:'17:00',photo:require('./Malmö.png')},
-    {key:4,bandName:'Måneskin',place:'Landskrona',Time:'18:00',photo:require('./Malmö.png')},
-    {key:5,bandName:'Muse',place:'Kävlinge',Time:'19:00',photo:require('./Malmö.png')},
+    {Key:1,bandName:'Metallica',place:'malmö',Time:'15:00',photo:require('./assets/Malmö.png')},
+    {key:2,bandName:'Red Hot Chili Peppers',place:'lund',Time:'16:00',photo:require('./assets/Malmö.png')},
+    {key:3,bandName:'Green Day',place:'Helsingborg',Time:'17:00',photo:require('./assets/Malmö.png')},
+    {key:4,bandName:'Måneskin',place:'Landskrona',Time:'18:00',photo:require('./assets/Malmö.png')},
+    {key:5,bandName:'Muse',place:'Kävlinge',Time:'19:00',photo:require('./assets/Malmö.png')},
    ]);
 
 itemSeparator = () =>{

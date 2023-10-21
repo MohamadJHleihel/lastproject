@@ -29,7 +29,7 @@ export default function Login({route ,navigation}) {
       <View>
        <Text style={styles.login}>Login Information</Text>
       </View>
-      <View>
+      <View width= '90%'>
       {<Text> Name</Text>}
         <TextInput 
         style={styles.inputContainer}
@@ -73,7 +73,9 @@ const styles = StyleSheet.create({
   },
   inputContainer:{
     borderWidth:0.25,
-    borderRadius:5
+    borderRadius:5,
+    fontSize:20
+
   },
   login:{
    fontSize:20,

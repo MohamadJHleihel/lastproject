@@ -1,4 +1,4 @@
-import { View,Text, FlatList,Image } from "react-native";
+import { View,Text, FlatList,Image,StyleSheet } from "react-native";
 import Logo from "./Logo";
 import { useState } from "react";
 
@@ -6,12 +6,12 @@ import { useState } from "react";
 export default function Success({route}) {
     const [bookedlist, onAddingbooklist] = useState('');
     return (
-        <View>
-            <Image  source={require('./Hurray.png')}/>
+        <View style={styles.successContainer}>
+            <Image  source={require('./assets/Hurray.png')}/>
             <View>
             <Text>{route.params.parambooking.place}</Text>
             </View>
-            <FlatList
+            {/* <FlatList
             data={route.params.parambooking}
             renderItem={({item}) => {
                 <View>
@@ -19,9 +19,17 @@ export default function Success({route}) {
                </View>
             
             }}
-            />
+            /> */}
         </View>
 
 
         );
     }
+    const styles = StyleSheet.create({
+        successContainer: {
+          flex:1,
+          backgroundColor: '#E4DDDE',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }
+        });

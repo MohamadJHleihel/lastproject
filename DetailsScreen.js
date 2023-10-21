@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image, TextInput, Button,Alert, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View,Image, TextInput, Button,Alert, TouchableOpacity, FlatList} from 'react-native';
 import { useState } from 'react';
 
 
@@ -30,14 +30,25 @@ function timeAlert() {
 
 
 
-const parambooking = route.params.item;
+const [parambooking,onaddingparambooking] = useState( route.params.item);
   return (
     <View style={styles.DetailsScreenContainer}>
-        <Text style={styles.DetailsHeader}>Join us at :{route.params.item.Time}</Text>
+        <Text style={styles.DetailsHeader}>Join us at :{parambooking.Time}</Text>
         <Image 
         source={route.params.item.photo}
-        style ={{flex:2, width:200}}
+        style ={{flex:2, width:'100%'}}
         /> 
+       <FlatList
+        data={parambooking} 
+        flexDirection='row'
+        renderItem={({parambooking}) =>(
+            <View >     <Text>{parambooking.Time}</Text>      </View>
+            
+       )}
+        />
+        
+        
+        
         
       
       <View style={styles.booking}>
@@ -95,7 +106,7 @@ const styles = StyleSheet.create({
   booking:{
     flexDirection:'row',
     flex:2,
-    backgroundColor:'red',
+    backgroundColor:'#E4DDDE',
     justifyContent: 'space-between',
     justifyContent:'space-around',
     alignItems: 'center',
