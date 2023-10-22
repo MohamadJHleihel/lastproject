@@ -27,7 +27,7 @@ export default function Login({ route, navigation }) {
   return (
     <View style={styles.loginContainer}>
 
-      <Text>We find the place and you do the dance</Text>
+      <Text style={styles.login}>We find the place and you do the dance</Text>
       <Logo />
       <View>
         <Text style={styles.login}>Login Information</Text>

@@ -26,7 +26,7 @@ export default function DetailsScreen({ navigation, route }) {
 
     function timeAlert() {
 
-        Alert.alert('Alert Title', route.params.item.Time,
+        Alert.alert('Time', route.params.item.Time,
             [{
                 text: 'Cancel',
                 onPress: () => console.log('Cancel Pressed')
@@ -50,7 +50,7 @@ export default function DetailsScreen({ navigation, route }) {
             <Text style={styles.DetailsHeader}>Join us at :{parambooking.Time}</Text>
             <Image
                 source={route.params.item.photo}
-                style={{ flex: 2, width: '100%' }}
+                style={{ flex: 2, width: '98%', borderRadius:6 }}
             />
             <FlatList
                 data={parambooking}
@@ -135,7 +135,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         justifyContent: 'space-around',
         alignItems: 'center',
-        width: '100%'
+        width: '100%',
+        
     },
 
     ButtonsDetailsScreenContainer: {
