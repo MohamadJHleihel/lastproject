@@ -1,5 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image } from 'react-native';
 import Login from './Login';
 import DetailsScreen from './DetailsScreen';
 import EventsScreen from './EventsScreen';
@@ -19,14 +17,7 @@ export default function App() {
          name="Login" 
          component={Login} 
          options={{
-          title: 'Login',
-          headerStyle: {
-            backgroundColor: '#F8C8BA',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
+          headerShown: false
         }}  />
         <Stack.Screen name="EventsScreen" component={EventsScreen} />
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
