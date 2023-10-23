@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Image, TextInput, Button, Alert, TouchableOpaci
 import { useState } from 'react';
 
 
-
 export default function DetailsScreen({ navigation, route }) {
 
     function placeAlert() {
@@ -47,32 +46,31 @@ export default function DetailsScreen({ navigation, route }) {
     const [parambooking, onaddingparambooking] = useState(route.params.item);
     return (
         <View style={styles.DetailsScreenContainer}>
-            <Text style={styles.DetailsHeader}>Join us at :{parambooking.Time}</Text>
             <Image
                 source={route.params.item.photo}
-                style={{ flex: 2, width: '98%', borderRadius:6 }}
+                style={{ flex: 2, width: '95%', borderRadius:6 }}
             />
-            <FlatList
+   {/*          <FlatList
                 data={parambooking}
                 flexDirection='row'
                 renderItem={({ parambooking }) => (
                     <View >     <Text>{parambooking.Time}</Text>      </View>
 
                 )}
-            />
+            /> */}
 
 
 
 
 
             <View style={styles.booking}>
-                <Text> the details from API</Text>
-                <Button
+                <View style={{flex:3}}><Text> {route.params.item.Info}</Text></View>
+                <View style={{flex:1}}><Button
                     title='Book'
                     onPress={() => {
                         navigation.navigate("Success",
                             { parambooking: parambooking })
-                    }} />
+                    }} /></View>
             </View>
             <View style={styles.ButtonsDetailsScreenContainer}>
                 <View>
@@ -136,7 +134,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        
+        alignContent:'space-around'
     },
 
     ButtonsDetailsScreenContainer: {

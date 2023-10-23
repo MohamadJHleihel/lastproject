@@ -27,10 +27,11 @@ export default function Login({ route, navigation }) {
   return (
     <View style={styles.loginContainer}>
 
-      <Text style={styles.login}>We find the place and you do the dance</Text>
+      <Text style={styles.bigtext
+      }>We find the place and you do the dance</Text>
       <Logo />
       <View>
-        <Text style={styles.login}>Login Information</Text>
+        <Text style={styles.bigtext}>Login Information</Text>
       </View>
       <View width='90%'>
         {<Text> Name</Text>}
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 20
 
   },
-  login: {
+  bigtext: {
     fontSize: 20,
     fontStyle: 'italic',
     color: '#8B6C70',

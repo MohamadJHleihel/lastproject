@@ -1,9 +1,15 @@
 import React,{useState,useEffect} from 'react';
 import {View, StyleSheet,FlatList,Text,Image} from 'react-native';
-import axios from 'axios'
+import axios from 'axios';
 
 
-const FoodScreen = () => {
+
+
+export default function FoodScreen (){
+
+
+
+//const FoodScreen = () => {
     const [foods,setFoods] =useState([])
 
    useEffect(()=>{
@@ -21,20 +27,35 @@ const FoodScreen = () => {
     }
   }
     return (
-        <View>
+        <View style={styles.food}>
              <FlatList
-      data={foods}
-      renderItem={({item,index})=>(
-        <View>
-      <Text>{item.strCategory}</Text>
-      <Image source={{uri:`${item.strCategoryThumb}`}} style={{width:50,height:50}}/> 
-      </View>
+               numColumns={2}
+                data={foods}
+                renderItem={({item,index})=>(
+                  <View>
+                <Text style={styles.foodText}>{item.strCategory}</Text>
+                <Image source={{uri:`${item.strCategoryThumb}`}} style={{width:200,height:200, borderRadius:10,backgroundColor:'#8B6C70'}}/> 
+                </View>
       )}
       />
         </View>
     );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+ food:{
+  width:'100%',
+        backgroundColor: '#E4DDDE',
+        alignItems:'center',
+        
+        padding: 5
 
-export default FoodScreen;
+ },
+ foodText:{
+  color:'#8B6C70',
+  fontWeight:'bold',
+  fontSize:'20',
+  marginTop:24
+ }
+
+});
