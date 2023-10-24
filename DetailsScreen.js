@@ -64,13 +64,13 @@ export default function DetailsScreen({ navigation, route }) {
 
 
             <View style={styles.booking}>
-                <View style={{flex:3}}><Text> {route.params.item.Info}</Text></View>
-                <View style={{flex:1}}><Button
+                <View style={{width:'95%'}}><Text> {route.params.item.Info}</Text></View>
+               {/*  <View style={{flex:1, height:70,backgroundColor:'red'}}><Button
                     title='Book'
                     onPress={() => {
                         navigation.navigate("Success",
                             { parambooking: parambooking })
-                    }} /></View>
+                    }} /></View> */}
             </View>
             <View style={styles.ButtonsDetailsScreenContainer}>
                 <View>
